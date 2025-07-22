@@ -1,15 +1,14 @@
-//progetto copiato:
 #include "Serializer.hpp"
 
 
 Serializer::~Serializer()
 {}
 
-Serializer::Serializer(const Serializer& obj)
+Serializer::Serializer(const Serializer &)
 {
 }
 
-Serializer& Serializer::operator=(const Serializer& obj)
+Serializer& Serializer::operator=(const Serializer&)
 {
 	return *this;
 }
@@ -30,11 +29,6 @@ uintptr_t Serializer::serialize(Data* ptr)
 	return (beta);
 }
 
-	//stuff for testing purposes
-	// Data	doll;
-	// dataInit(doll);
-	// alpha = &doll;
-
 Data* Serializer::deserialize(uintptr_t raw)
 {
 	Data*	alpha;
@@ -43,3 +37,4 @@ Data* Serializer::deserialize(uintptr_t raw)
 
 	return (alpha);
 }
+

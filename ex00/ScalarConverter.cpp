@@ -21,16 +21,16 @@ void ScalarConverter::convert(const std::string &words)
 	}
 	else if (words == "nan")
 	{
-		std::cout << "Char: not possible" << std::endl;
-		std::cout << "Int: not possible" << std::endl;
+		std::cout << "Char: impossible" << std::endl;
+		std::cout << "Int: impossible" << std::endl;
 		std::cout << "Float: nanf" << std::endl;
 		std::cout << "Double: nan" << std::endl;
 		return;
 	}
 	else if (words == "nanf")
 	{
-		std::cout << "Char: not possible" << std::endl;
-		std::cout << "Int: not possible" << std::endl;
+		std::cout << "Char: impossible" << std::endl;
+		std::cout << "Int: impossible" << std::endl;
 		std::cout << "Float: nanf" << std::endl;
 		std::cout << "Double: nan" << std::endl;
 		return;
@@ -68,10 +68,10 @@ void ScalarConverter::convert(const std::string &words)
 	}
 	if (n == 0 && words[0] != 48)
 	{
-		std::cout << "Char: not possible" << std::endl;
-		std::cout << "Int: not possible" << std::endl;
-		std::cout << "Float: not possible" << std::endl;
-		std::cout << "Double: not possible" << std::endl;
+		std::cout << "Char: impossible" << std::endl;
+		std::cout << "Int: impossible" << std::endl;
+		std::cout << "Float: impossible" << std::endl;
+		std::cout << "Double: impossible" << std::endl;
 		return;
 	}
 	double m = std::floor(n);
@@ -80,14 +80,14 @@ void ScalarConverter::convert(const std::string &words)
 	//debug
 	//std::cout << "debug -----> n:"<< n << " m: " << m << std::endl;
 	if ( n > 127 || m != n || n < 0)
-	std::cout << "not possible" << std::endl;
+	std::cout << "impossible" << std::endl;
 	else if (n > 32 && n < 127)
 	std::cout << "\'" << s << "\'" << std::endl;
 	else 
 	std::cout << "non displayable" << std::endl;
 	//stampa int
 	if (n > 2147483647 || n < -2147483648)
-	std::cout << "Int: not possible" << std::endl;
+	std::cout << "Int: impossible" << std::endl;
 	else
 	std::cout << "Int: " << t << std::endl;
 	//stampa float

@@ -3,8 +3,8 @@
 
 
 struct Data {
-    int   x = 1;
-    float y = 4;
+    int   x;
+    float y;
 };
 
 #endif
