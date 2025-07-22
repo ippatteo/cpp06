@@ -8,87 +8,58 @@
 
 int main()
 {
-    // Initialize random seed
+    // Inizializza il seed per i numeri casuali
     std::srand(static_cast<unsigned int>(std::time(0)));
     
-    std::cout << "=== Dynamic Cast Tests ===" << std::endl;
+    std::cout << "=== Test Dynamic Cast ===" << std::endl;
     
-    // Test 1: Generate and identify multiple objects
-    std::cout << "\n--- Test 1: Random Generation and Identification ---" << std::endl;
-    for (int i = 0; i < 5; i++) {
-        std::cout << "\nTest " << (i + 1) << ":" << std::endl;
+    // Test 1: Generazione casuale e identificazione
+    std::cout << "\n--- Test Generazione Casuale ---" << std::endl;
+    for (int i = 0; i < 3; i++) {
+        std::cout << "\nOggetto " << (i + 1) << ":" << std::endl;
         Base* obj = generate();
         
-        std::cout << "Pointer identification: ";
+        std::cout << "Identificazione con puntatore: ";
         identify(obj);
         
-        std::cout << "Reference identification: ";
+        std::cout << "Identificazione con reference: ";
         identify(*obj);
         
         delete obj;
     }
-    
-    // Test 2: Specific object testing
-    std::cout << "\n--- Test 2: Specific Object Testing ---" << std::endl;
+    std::cout << "\n--- Test Tipi Specifici ---" << std::endl;
     
     // Test A
-    std::cout << "\nCreating A object:" << std::endl;
+    std::cout << "\nCreo oggetto di tipo A:" << std::endl;
     Base* a = new A();
-    std::cout << "Pointer identify: ";
+    std::cout << "Con puntatore: ";
     identify(a);
-    std::cout << "Reference identify: ";
+    std::cout << "Con reference: ";
     identify(*a);
     delete a;
-    
     // Test B
-    std::cout << "\nCreating B object:" << std::endl;
+    std::cout << "\nCreo oggetto di tipo B:" << std::endl;
     Base* b = new B();
-    std::cout << "Pointer identify: ";
+    std::cout << "Con puntatore: ";
     identify(b);
-    std::cout << "Reference identify: ";
+    std::cout << "Con reference: ";
     identify(*b);
     delete b;
-    
     // Test C
-    std::cout << "\nCreating C object:" << std::endl;
+    std::cout << "\nCreo oggetto di tipo C:" << std::endl;
     Base* c = new C();
-    std::cout << "Pointer identify: ";
+    std::cout << "Con puntatore: ";
     identify(c);
-    std::cout << "Reference identify: ";
+    std::cout << "Con reference: ";
     identify(*c);
     delete c;
     
-    // Test 3: Array of objects
-    std::cout << "\n--- Test 3: Array of Objects ---" << std::endl;
-    Base* objects[6];
-    
-    // Create array of mixed objects
-    objects[0] = new A();
-    objects[1] = new B();
-    objects[2] = new C();
-    objects[3] = new A();
-    objects[4] = new B();
-    objects[5] = new C();
-    
-    std::cout << "\nIdentifying array objects:" << std::endl;
-    for (int i = 0; i < 6; i++) {
-        std::cout << "Object " << i << " - Pointer: ";
-        identify(objects[i]);
-        std::cout << "Object " << i << " - Reference: ";
-        identify(*objects[i]);
-    }
-    
-    // Cleanup array
-    for (int i = 0; i < 6; i++) {
-        delete objects[i];
-    }
-    
-    // Test 4: Null pointer test
-    std::cout << "\n--- Test 4: Null Pointer Test ---" << std::endl;
+    // Puntatore NULL
+    std::cout << "\n--- Test Puntatore NULL ---" << std::endl;
     Base* nullPtr = NULL;
-    std::cout << "Testing null pointer: ";
+    std::cout << "Test con puntatore NULL: ";
     identify(nullPtr);
     
-    std::cout << "\n=== All Tests Completed ===" << std::endl;
+    std::cout << "\n=== Test Completati ===" << std::endl;
     return 0;
 }

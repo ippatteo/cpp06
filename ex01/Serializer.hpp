@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
+
 
 #include <iostream>
 #include <string>
@@ -18,3 +20,5 @@ class Serializer {
 		static uintptr_t serialize(Data* ptr);
 		static Data* deserialize(uintptr_t raw);
 };
+
+#endif
